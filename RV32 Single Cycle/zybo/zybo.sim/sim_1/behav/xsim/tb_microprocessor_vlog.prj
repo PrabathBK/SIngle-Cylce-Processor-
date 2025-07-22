@@ -1,0 +1,32 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../../src-old/adder.sv" \
+"../../../../../src-old/alu.sv" \
+"../../../../../src-old/branch.sv" \
+"../../../../../src-old/control_decoder.sv" \
+"../../../../../src-old/control_unit.sv" \
+"../../../../../src-old/core.sv" \
+"../../../../../src-old/data_mem.sv" \
+"../../../../../src-old/immediategen.sv" \
+"../../../../../src-old/instr_mem.sv" \
+"../../../../../src-old/memory.sv" \
+"../../../../../src-old/memory_wrapper.sv" \
+"../../../../../src-old/microprocessor.sv" \
+"../../../../../src-old/mux.sv" \
+"../../../../../src-old/mux2_4.sv" \
+"../../../../../src-old/mux3_8.sv" \
+"../../../../../src-old/pc.sv" \
+"../../../../../src-old/register_file.sv" \
+"../../../../../src-old/stage_decode.sv" \
+"../../../../../src-old/stage_execute.sv" \
+"../../../../../src-old/stage_fetch.sv" \
+"../../../../../src-old/stage_memory.sv" \
+"../../../../../src-old/stage_writeback.sv" \
+"../../../../../src-old/type_decoder.sv" \
+"../../../../../src-old/tb_microprocessor.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

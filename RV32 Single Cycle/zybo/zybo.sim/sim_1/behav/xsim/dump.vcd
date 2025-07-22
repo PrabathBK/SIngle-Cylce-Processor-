@@ -1,0 +1,924 @@
+$date
+   Sun Dec 15 11:39:28 2024
+$end
+
+$version
+  2024.1
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module tb_microprocessor $end
+$scope module u_microprocessor0 $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 32 # instruction [31:0] $end
+$var wire 32 $ instruction_data [31:0] $end
+$var wire 32 % pc_address [31:0] $end
+$var wire 32 & load_data_out [31:0] $end
+$var wire 32 ' alu_out_address [31:0] $end
+$var wire 32 ( store_data [31:0] $end
+$var wire 4 ) mask [3:0] $end
+$var wire 4 * instruc_mask_singal [3:0] $end
+$var wire 1 + instruction_mem_we_re $end
+$var wire 1 , instruction_mem_request $end
+$var wire 1 - instruc_mem_valid $end
+$var wire 1 . data_mem_valid $end
+$var wire 1 / data_mem_we_re $end
+$var wire 1 0 data_mem_request $end
+$var wire 1 1 load_signal $end
+$var wire 1 2 store $end
+$scope module u_instruction_memory $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 1 + we_re $end
+$var wire 1 , request $end
+$var wire 4 * mask [3:0] $end
+$var wire 8 3 address [9:2] $end
+$var wire 32 # data_in [31:0] $end
+$var reg 1 4 valid $end
+$var wire 32 $ data_out [31:0] $end
+$scope module u_memory $end
+$var wire 1 ! clk $end
+$var wire 1 + we_re $end
+$var wire 1 , request $end
+$var wire 8 3 address [9:2] $end
+$var wire 32 # data_in [31:0] $end
+$var wire 4 * mask [3:0] $end
+$var reg 32 5 data_out [31:0] $end
+$upscope $end
+$upscope $end
+$scope module u_core $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 1 . data_mem_valid $end
+$var wire 1 - instruc_mem_valid $end
+$var wire 32 $ instruction [31:0] $end
+$var wire 32 & load_data_in [31:0] $end
+$var wire 1 1 load_signal $end
+$var wire 1 + instruction_mem_we_re $end
+$var wire 1 , instruction_mem_request $end
+$var wire 1 / data_mem_we_re $end
+$var wire 1 0 data_mem_request $end
+$var wire 4 ) mask_singal [3:0] $end
+$var wire 4 * instruc_mask_singal [3:0] $end
+$var wire 32 ( store_data_out [31:0] $end
+$var wire 32 ' alu_out_address [31:0] $end
+$var wire 32 % pc_address [31:0] $end
+$var wire 32 6 instruc_data_out [31:0] $end
+$var wire 32 7 pre_address_pc [31:0] $end
+$var wire 1 8 load $end
+$var wire 1 9 store $end
+$var wire 1 : next_sel $end
+$var wire 1 ; branch_result $end
+$var wire 4 < mask [3:0] $end
+$var wire 4 = alu_control [3:0] $end
+$var wire 2 > mem_to_reg [1:0] $end
+$var wire 32 ? op_b [31:0] $end
+$var wire 32 @ opa_mux_out [31:0] $end
+$var wire 32 A opb_mux_out [31:0] $end
+$var wire 32 B alu_res_out [31:0] $end
+$var wire 32 C next_sel_address [31:0] $end
+$var wire 32 D wrap_load_out [31:0] $end
+$var wire 32 E rd_wb_data [31:0] $end
+$scope module u_fetchstage $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 1 : next_sel $end
+$var wire 1 . valid $end
+$var wire 1 8 load $end
+$var wire 1 ; branch_result $end
+$var wire 32 B next_address [31:0] $end
+$var wire 32 F address_in [31:0] $end
+$var wire 32 $ instruction_fetch [31:0] $end
+$var reg 1 G we_re $end
+$var reg 1 H request $end
+$var reg 4 I mask [3:0] $end
+$var wire 32 % address_out [31:0] $end
+$var reg 32 J instruction [31:0] $end
+$var wire 32 7 pre_address_pc [31:0] $end
+$scope module u_pc0 $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 1 8 load $end
+$var wire 1 : next_sel $end
+$var wire 1 . dmem_valid $end
+$var wire 1 ; branch_result $end
+$var wire 32 B next_address [31:0] $end
+$var wire 32 K address_in [31:0] $end
+$var reg 32 L address_out [31:0] $end
+$var reg 32 M pre_address_pc [31:0] $end
+$var reg 32 N prev_addr [31:0] $end
+$upscope $end
+$upscope $end
+$scope module u_decodestage $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 32 6 instruction [31:0] $end
+$var wire 32 7 pc_address [31:0] $end
+$var wire 32 E rd_wb_data [31:0] $end
+$var wire 1 8 load $end
+$var wire 1 9 store $end
+$var wire 1 : next_sel $end
+$var wire 1 ; branch_result $end
+$var wire 4 = alu_control [3:0] $end
+$var wire 2 > mem_to_reg [1:0] $end
+$var wire 32 @ opa_mux_out [31:0] $end
+$var wire 32 A opb_mux_out [31:0] $end
+$var wire 32 ? opb_data [31:0] $end
+$var wire 1 O reg_write $end
+$var wire 1 P branch $end
+$var wire 1 Q operand_a $end
+$var wire 1 R operand_b $end
+$var wire 3 S imm_sel [2:0] $end
+$var wire 32 T op_a [31:0] $end
+$var wire 32 U op_b [31:0] $end
+$var wire 32 V imm_mux_out [31:0] $end
+$var wire 32 W i_immo [31:0] $end
+$var wire 32 X s_immo [31:0] $end
+$var wire 32 Y sb_immo [31:0] $end
+$var wire 32 Z uj_immo [31:0] $end
+$var wire 32 [ u_immo [31:0] $end
+$scope module u_cu0 $end
+$var wire 7 \ opcode [6:0] $end
+$var wire 3 ] fun3 [14:12] $end
+$var wire 1 ^ fun7 $end
+$var wire 1 O reg_write $end
+$var wire 3 S imm_sel [2:0] $end
+$var wire 1 R operand_b $end
+$var wire 1 Q operand_a $end
+$var wire 2 > mem_to_reg [1:0] $end
+$var wire 1 8 Load $end
+$var wire 1 9 Store $end
+$var wire 1 P Branch $end
+$var wire 1 _ mem_en $end
+$var wire 1 : next_sel $end
+$var wire 4 = alu_control [3:0] $end
+$var wire 1 ` r_type $end
+$var wire 1 a i_type $end
+$var wire 1 b load $end
+$var wire 1 c store $end
+$var wire 1 d branch $end
+$var wire 1 e jal $end
+$var wire 1 f jalr $end
+$var wire 1 g lui $end
+$var wire 1 h auipc $end
+$scope module u_typedec0 $end
+$var wire 7 \ opcode [6:0] $end
+$var reg 1 i r_type $end
+$var reg 1 j i_type $end
+$var reg 1 k load $end
+$var reg 1 l store $end
+$var reg 1 m branch $end
+$var reg 1 n jal $end
+$var reg 1 o jalr $end
+$var reg 1 p lui $end
+$var reg 1 q auipc $end
+$upscope $end
+$scope module u_controldec0 $end
+$var wire 3 ] fun3 [14:12] $end
+$var wire 1 ^ fun7 $end
+$var wire 1 a i_type $end
+$var wire 1 ` r_type $end
+$var wire 1 b load $end
+$var wire 1 c store $end
+$var wire 1 d branch $end
+$var wire 1 e jal $end
+$var wire 1 f jalr $end
+$var wire 1 g lui $end
+$var wire 1 h auipc $end
+$var reg 1 r Load $end
+$var reg 1 s Store $end
+$var reg 2 t mem_to_reg [1:0] $end
+$var reg 1 u reg_write $end
+$var reg 1 v mem_en $end
+$var reg 1 w operand_b $end
+$var reg 1 x operand_a $end
+$var reg 3 y imm_sel [2:0] $end
+$var reg 1 z Branch $end
+$var reg 1 { next_sel $end
+$var reg 4 | alu_control [3:0] $end
+$upscope $end
+$upscope $end
+$scope module u_imm_gen0 $end
+$var wire 32 6 instr [31:0] $end
+$var reg 32 } i_imme [31:0] $end
+$var reg 32 ~ s_imme [31:0] $end
+$var reg 32 !! sb_imme [31:0] $end
+$var reg 32 "! uj_imme [31:0] $end
+$var reg 32 #! u_imme [31:0] $end
+$upscope $end
+$scope module u_mux0 $end
+$var wire 32 W a [31:0] $end
+$var wire 32 X b [31:0] $end
+$var wire 32 Y c [31:0] $end
+$var wire 32 Z d [31:0] $end
+$var wire 32 [ e [31:0] $end
+$var wire 32 $! f [31:0] $end
+$var wire 32 %! g [31:0] $end
+$var wire 32 &! h [31:0] $end
+$var wire 3 S sel [2:0] $end
+$var reg 32 '! out [31:0] $end
+$upscope $end
+$scope module u_regfile0 $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n_i $end
+$var wire 1 O wen_i $end
+$var wire 5 (! raddr1_i [19:15] $end
+$var wire 5 )! raddr2_i [24:20] $end
+$var wire 5 *! waddr_i [11:7] $end
+$var wire 32 E wdata_i [31:0] $end
+$var reg 32 +! rdata1_o [31:0] $end
+$var reg 32 ,! rdata2_o [31:0] $end
+$upscope $end
+$scope module u_mux1 $end
+$var wire 32 T a [31:0] $end
+$var wire 32 7 b [31:0] $end
+$var wire 1 Q sel $end
+$var wire 32 @ out [31:0] $end
+$upscope $end
+$scope module u_mux2 $end
+$var wire 32 U a [31:0] $end
+$var wire 32 V b [31:0] $end
+$var wire 1 R sel $end
+$var wire 32 A out [31:0] $end
+$upscope $end
+$scope module u_branch0 $end
+$var wire 32 T op_a [31:0] $end
+$var wire 32 U op_b [31:0] $end
+$var wire 3 ] fun3 [14:12] $end
+$var wire 1 P en $end
+$var reg 1 -! result $end
+$upscope $end
+$upscope $end
+$scope module u_executestage $end
+$var wire 32 @ a_i [31:0] $end
+$var wire 32 A b_i [31:0] $end
+$var wire 4 = alu_control [3:0] $end
+$var wire 32 7 pc_address [31:0] $end
+$var wire 32 B alu_res_out [31:0] $end
+$var wire 32 C next_sel_address [31:0] $end
+$scope module u_alu0 $end
+$var wire 32 @ a_i [31:0] $end
+$var wire 32 A b_i [31:0] $end
+$var wire 4 = op_i [3:0] $end
+$var reg 32 .! res_o [31:0] $end
+$upscope $end
+$scope module u_adder0 $end
+$var wire 32 7 a [31:0] $end
+$var reg 32 /! adder_out [31:0] $end
+$upscope $end
+$upscope $end
+$scope module u_memorystage $end
+$var wire 1 " rst $end
+$var wire 1 8 load $end
+$var wire 1 9 store $end
+$var wire 1 - valid $end
+$var wire 32 ? op_b [31:0] $end
+$var wire 32 B alu_out_address [31:0] $end
+$var wire 32 6 instruction [31:0] $end
+$var wire 32 & wrap_load_in [31:0] $end
+$var reg 1 0! we_re $end
+$var reg 1 1! request $end
+$var wire 4 < mask [3:0] $end
+$var wire 32 ( store_data_out [31:0] $end
+$var wire 32 D wrap_load_out [31:0] $end
+$scope module u_wrap_mem0 $end
+$var wire 32 ? data_i [31:0] $end
+$var wire 2 2! byteadd [1:0] $end
+$var wire 3 ] fun3 [14:12] $end
+$var wire 1 9 mem_en $end
+$var wire 1 8 Load $end
+$var wire 32 & wrap_load_in [31:0] $end
+$var reg 4 3! masking [3:0] $end
+$var reg 32 4! data_o [31:0] $end
+$var reg 32 5! wrap_load_out [31:0] $end
+$upscope $end
+$upscope $end
+$scope module u_wbstage $end
+$var wire 2 > mem_to_reg [1:0] $end
+$var wire 32 B alu_out [31:0] $end
+$var wire 32 D data_mem_out [31:0] $end
+$var wire 32 C next_sel_address [31:0] $end
+$var wire 32 E rd_sel_mux_out [31:0] $end
+$scope module u_mux2 $end
+$var wire 32 B a [31:0] $end
+$var wire 32 D b [31:0] $end
+$var wire 32 C c [31:0] $end
+$var wire 32 6! d [31:0] $end
+$var wire 2 > sel [1:0] $end
+$var reg 32 7! out [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module u_data_memory $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 1 / we_re $end
+$var wire 1 0 request $end
+$var wire 1 1 load $end
+$var wire 4 ) mask [3:0] $end
+$var wire 8 8! address [9:2] $end
+$var wire 32 ( data_in [31:0] $end
+$var reg 1 9! valid $end
+$var wire 32 & data_out [31:0] $end
+$scope module u_memory $end
+$var wire 1 ! clk $end
+$var wire 1 / we_re $end
+$var wire 1 0 request $end
+$var wire 8 8! address [9:2] $end
+$var wire 32 ( data_in [31:0] $end
+$var wire 4 ) mask [3:0] $end
+$var reg 32 :! data_out [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+bx0 !!
+1"
+bx0 "!
+bx #
+bx000000000000 #!
+bx $
+bz $!
+bx %
+bz %!
+bx &
+bz &!
+b0 '
+bx '!
+bx (
+bx (!
+bx )
+bx )!
+b1111 *
+bx *!
+0+
+bx +!
+1,
+bx ,!
+x-
+0-!
+x.
+b0 .!
+0/
+bx /!
+00
+00!
+01
+01!
+z2
+b0 2!
+bx 3
+bx 3!
+x4
+bx 4!
+bx 5
+bx 5!
+bx 6
+bz 6!
+bx 7
+b0 7!
+08
+b0 8!
+09
+x9!
+0:
+bx :!
+0;
+bx <
+bx =
+b0 >
+bx ?
+bx @
+bx A
+b0 B
+bx C
+bx D
+b0 E
+b0 F
+0G
+1H
+b1111 I
+bx J
+b0 K
+bx L
+bx M
+bx N
+0O
+0P
+0Q
+0R
+bx S
+bx T
+bx U
+bx V
+bx W
+bx X
+bx0 Y
+bx0 Z
+bx000000000000 [
+bx \
+bx ]
+x^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+0j
+0k
+0l
+0m
+0n
+0o
+0p
+0q
+0r
+0s
+b0 t
+0u
+0v
+0w
+0x
+bx y
+0z
+0{
+bx |
+bx }
+bx ~
+$end
+
+#5000
+1!
+1-
+0.
+14
+09!
+
+#10000
+0!
+0"
+0-
+04
+
+#15000
+1!
+b0 %
+b0 3
+b0 L
+
+#20000
+0!
+1"
+
+#25000
+1!
+b1010 !!
+b10 "!
+b1000000000000000000000 #!
+b1000000000010100010011 $
+b100 %
+bx '
+b10 '!
+b0 (!
+b10 )!
+b1010 *!
+1-
+bx .!
+b100 /!
+bx 2!
+b1 3
+14
+b1000000000010100010011 5
+b1000000000010100010011 6
+b0 7
+bx 7!
+bx 8!
+b0 =
+b10 A
+bx B
+b100 C
+bx E
+b1000000000010100010011 J
+b100 L
+b0 M
+b0 N
+1O
+1R
+b0 S
+b10 V
+b10 W
+b1010 X
+b1010 Y
+b10 Z
+b1000000000000000000000 [
+b10011 \
+b0 ]
+0^
+1a
+1j
+1u
+1w
+b0 y
+b0 |
+b10 }
+b1010 ~
+
+#30000
+0!
+
+#35000
+1!
+b10 !!
+b100000000000 "!
+b100000000000000000000 #!
+b100000000000100010011 $
+b1000 %
+b1 '!
+b0 (!
+b1 )!
+b10 *!
+b1000 /!
+b10 3
+b100000000000100010011 5
+b100000000000100010011 6
+b100 7
+b1 A
+b1000 C
+b100000000000100010011 J
+b1000 L
+b100 M
+b100 N
+b1 V
+b1 W
+b10 X
+b10 Y
+b100000000000 Z
+b100000000000000000000 [
+b10011 \
+b0 ]
+0^
+b1 }
+b10 ~
+
+#40000
+0!
+
+#45000
+1!
+b100000000000 !!
+b10100 "!
+b1010000000000000000000000 #!
+b1010000000000000011101111 $
+b1100 %
+b11100 '
+b10100 '!
+b0 (!
+b10100 )!
+b1 *!
+b11100 .!
+b1100 /!
+b0 2!
+b11 3
+b1010000000000000011101111 5
+b1010000000000000011101111 6
+b1000 7
+b1100 7!
+b111 8!
+1:
+b10 >
+b1000 @
+b10100 A
+b11100 B
+b1100 C
+b1100 E
+b1010000000000000011101111 J
+b1100 L
+b1000 M
+b1000 N
+1Q
+b11 S
+b10100 V
+b10100 W
+b1 X
+b100000000000 Y
+b10100 Z
+b1010000000000000000000000 [
+b1101111 \
+b0 ]
+0^
+0a
+1e
+0j
+1n
+b10 t
+1x
+b11 y
+1{
+b10100 }
+b1 ~
+
+#50000
+0!
+
+#55000
+1!
+b100000000010 !!
+b10000000000001000 "!
+b100000010000000000000000 #!
+b100000010000000110010011 $
+b11100 %
+bx '
+b1000 '!
+b10 (!
+b1000 )!
+b11 *!
+bx .!
+b10000 /!
+bx 2!
+b111 3
+b100000010000000110010011 5
+b100000010000000110010011 6
+b1100 7
+bx 7!
+bx 8!
+0:
+b0 >
+bx @
+b1000 A
+bx B
+b10000 C
+bx E
+b100000010000000110010011 J
+b11100 L
+b1100 M
+b1100 N
+0Q
+b0 S
+b1000 V
+b1000 W
+b11 X
+b100000000010 Y
+b10000000000001000 Z
+b100000010000000000000000 [
+b10011 \
+b0 ]
+0^
+1a
+0e
+1j
+0n
+b0 t
+0x
+b0 y
+0{
+b1000 }
+b11 ~
+
+#60000
+0!
+
+#65000
+1!
+b100 !!
+b10000000000000010 "!
+b1000010000000000000000 #!
+b1000010000001000110011 $
+b100000 %
+b10 '!
+b10 (!
+b10 )!
+b100 *!
+b100000 /!
+b1000 3
+b1000010000001000110011 5
+b1000010000001000110011 6
+b11100 7
+bx A
+b100000 C
+b1000010000001000110011 J
+b100000 L
+b11100 M
+b11100 N
+0R
+b10 V
+b10 W
+b100 X
+b100 Y
+b10000000000000010 Z
+b1000010000000000000000 [
+b110011 \
+b0 ]
+0^
+1`
+0a
+1i
+0j
+0w
+b10 }
+b100 ~
+
+#70000
+0!
+
+#75000
+1!
+b0 !!
+b1000000000000000 "!
+b1000000000000000 #!
+b1000000001100111 $
+b100100 %
+b0 '!
+b1 (!
+b0 )!
+b0 *!
+b100100 /!
+b1001 3
+b1000000001100111 5
+b1000000001100111 6
+b100000 7
+1:
+b0 A
+b100100 C
+b1000000001100111 J
+b100100 L
+b100000 M
+b100000 N
+1R
+b0 V
+b0 W
+b0 X
+b0 Y
+b1000000000000000 Z
+b1000000000000000 [
+b1100111 \
+b0 ]
+0^
+0`
+1f
+0i
+1o
+1w
+1{
+b0 }
+b0 ~
+
+#80000
+0!
+
+#85000
+1!
+b0 "!
+b0 #!
+b110011 $
+bx %
+b0 (!
+b0 )!
+b0 *!
+b101000 /!
+bx 3
+b110011 5
+b110011 6
+b100100 7
+0:
+bx A
+b101000 C
+b110011 J
+bx L
+b100100 M
+b100100 N
+0R
+b0 Z
+b0 [
+b110011 \
+b0 ]
+0^
+1`
+0f
+1i
+0o
+0w
+0{
+
+#90000
+0!
+
+#95000
+1!
+bx0 !!
+bx0 "!
+bx000000000000 #!
+bx $
+bx '!
+bx (!
+bx )!
+bx *!
+bx /!
+bx 5
+bx 6
+bx 7
+bx C
+bx J
+bx M
+bx N
+0O
+bx V
+bx W
+bx X
+bx0 Y
+bx0 Z
+bx000000000000 [
+bx \
+bx ]
+x^
+0`
+0i
+0u
+bx }
+bx ~
+
+#100000
+0!
+
+#105000
+1!
+
+#110000
+0!
+
+#115000
+1!
+
+#120000
+0!
+
+#125000
+1!
+
+#130000
+0!
+
+#135000
+1!
+
+#140000
+0!
+
+#145000
+1!
+
+#150000
+0!
+
+#155000
+1!
+
+#160000
+0!
+
+#165000
+1!
+
+#170000
+0!
+
+#175000
+1!
+
+#180000
+0!
+
+#185000
+1!
+
+#190000
+0!
+
+#195000
+1!
+
+#200000
+0!
+
+#205000
+1!
+
+#210000
+0!
+
+#215000
+1!
